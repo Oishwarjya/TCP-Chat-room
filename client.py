@@ -13,7 +13,7 @@ def recieve():
             if message =='NICK':
                 client.send(nickname.encode('ascii'))
             else:
-                print(message)
+                print(message.decode("utf-8"))
         except:
             print("An error occured!!")
             client.close()
@@ -21,11 +21,11 @@ def recieve():
 
 def write():
     while True:
-        message = f'{nickname}: {input("")}'
+        message = '{} : {}'.format(nickname, input(''))
         client.send(message.encode('ascii'))
 
 recieve_thread = threading.Thread(target = recieve)
 recieve_thread.start()
 
-write_thread = threading.Thread(target = recieve)
+write_thread = threading.Thread(target = write)
 write_thread.start()
