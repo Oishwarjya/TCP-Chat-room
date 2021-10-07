@@ -39,9 +39,9 @@ def recieve():
         nicknames.append(nickname)
         clients.append(client)
 
-        print('nickname of the client is {}'.format(nickname))
-        broadcast('{} just joined the chat'.format(nickname).encode('ascii'))
-        client.send('connectec to the sevrer!'.encode('ascii'))
+        print('Nickname of the client is {}'.format(nickname))
+        broadcast('{} Just joined the chat'.format(nickname).encode('ascii'))
+        client.send('Connected to the sevrer!'.encode('ascii'))
 
         thread = threading.Thread(target=handle, args=(client,))
         thread.start()
