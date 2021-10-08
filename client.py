@@ -1,6 +1,7 @@
 import socket
 import threading
 
+
 nickname= input('Choose a nickname : ')
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -21,7 +22,7 @@ def recieve():
 
 def write():
     while True:
-        message = '{} : {}'.format(nickname, input(''))
+        message = '{} :  {}'.format(nickname, input(''))
         client.send(message.encode('ascii'))
 
 recieve_thread = threading.Thread(target = recieve)
