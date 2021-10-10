@@ -12,9 +12,9 @@ def recieve():
         try:
             message= client.recv(1024)
             if message =='NICK':
-                client.send(nickname.encode('ascii'))
+                client.send(nickname).encode('ascii')
             else:
-                print(message.decode("utf-8"))
+                print(message).decode("utf-8")
         except:
             print("An error occured!!")
             client.close()
