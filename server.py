@@ -41,7 +41,7 @@ def recieve():
 
         print('Nickname of the client is {}'.format(nickname))
         broadcast('{} Just joined the chat'.format(nickname).encode('ascii'))
-        client.send('Connected to the sevrer!'.encode('ascii'))
+        client.send('Connected to this sevrer!'.encode('ascii'))
 
         thread = threading.Thread(target=handle, args=(client,))
         thread.start()
