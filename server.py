@@ -33,7 +33,7 @@ def recieve():
     while True:
         client, address = server.accept()
         print("Connected with {}".format(str(address)))
-
+# Amar shotti aar bhaal lagchena
         #client.send('NICK'.encode('ascii'))
         nickname = client.recv(1024).decode('ascii')
         nicknames.append(nickname)
